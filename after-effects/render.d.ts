@@ -11,7 +11,7 @@ module AfterEffects {
 
     }
 
-    export interface RenderQueueItem {
+    export interface RenderQueueItem extends Duplicable<RenderQueueItem>, Removable {
         numOutputModules:number;
         render:boolean;
         startTime:number;
@@ -21,6 +21,13 @@ module AfterEffects {
         skipFrames:number;
         comp:CompItem;
         outputModules:OMCollection;
+        logType:LogType;
+        onStatusChanged:string;
+        status:RQItemStatus;
+        templates:string[];
+        outputModule(index:number):OutputModule;
+        saveAsTemplate(name:string):void;
+        applyTemplate(templateName:string);
     }
 
     export interface RQItemCollection {
@@ -37,7 +44,7 @@ module AfterEffects {
         render();
         renderAsync();
         rendering:boolean;
-        showWindow();
+        showWindow(doShow:boolean);
         stopRendering();
     }
 

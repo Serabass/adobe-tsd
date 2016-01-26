@@ -141,4 +141,20 @@ module AfterEffects {
         IMAGE_CACHES = 1415
     }
 
+    enum LogType {
+        ERRORS_ONLY = 3012,
+        ERRORS_AND_SETTINGS = 3013,
+        ERRORS_AND_PER_FRAME_INFO = 3014
+    }
+
+    enum RQItemStatus {
+        WILL_CONTINUE = 2812,
+        NEEDS_OUTPUT = 2813,
+        UNQUEUED = 2814,
+        QUEUED = 2815,
+        RENDERING = 2816,
+        USER_STOPPED = 2817,
+        ERR_STOPPED = 2818,
+        DONE = 2819
+    }
 }
