@@ -4,6 +4,10 @@ module AfterEffects {
 
     }
 
+    enum KeyframeInterpolationType {
+
+    }
+
     enum FrameBlendingType {
 
     }
