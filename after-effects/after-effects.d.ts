@@ -10,9 +10,9 @@ module AfterEffects {
 
     export interface Shape {
         closed:boolean;
-        vertices:number[][];
-        inTangents:number[][];
-        outTangents:number[][];
+        vertices:Vector3D[];
+        inTangents:Vector3D[];
+        outTangents:Vector3D[];
         featherSegLocs:any;
         featherRelSegLocs:number[];
         featherRadii:any;
@@ -33,11 +33,17 @@ module AfterEffects {
         highQualityFieldSeparation:boolean;
         loop:number;
         removePulldown:PulldownPhase;
+        nativeFrameRate;
+        displayFrameRate;
+        conformFrameRate;
+        guessAlphaMode():void;
+        guessPulldown(method:PulldownMethod):void;
+
     }
 
     export interface CompItem extends Duplicable<CompItem>, Removable {
         activeCamera:any;
-        bgColor:number[];
+        bgColor:RGBColor;
         comment:string;
         counters:boolean;
         displayStartTime:number;
@@ -67,7 +73,7 @@ module AfterEffects {
         proxySource:any;
         renderer:string;
         renderers:string[];
-        resolutionFactor:number[];
+        resolutionFactor:Vector2D;
         selected:boolean;
         selectedLayers:TextLayer[];
         selectedProperties:Property[];

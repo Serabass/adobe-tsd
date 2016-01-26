@@ -1,6 +1,9 @@
 module AfterEffects {
 
     declare type PropertyKey = string | number;
+    declare type RGBColor = number[];
+    declare type Vector2D = number[];
+    declare type Vector3D = number[];
 
     export interface Duplicable<T> {
         duplicate():T;
@@ -71,7 +74,7 @@ module AfterEffects {
 
         about();
         bp();
-        colorPicker():number;
+        colorPicker():RGBColor;
         evalFile();
         gc():void;
         getenv(envVariable:string);
@@ -97,7 +100,7 @@ module AfterEffects {
         osVersion:string;
         userName:string;
 
-        callSystem();
+        callSystem(cmdLineToExecute:string):string;
     }
 
     export interface Reflection {
@@ -115,4 +118,22 @@ module AfterEffects {
         find();
     }
 
+    export interface TextDocument extends Property {
+        applyFill:boolean;
+        applyStroke:boolean;
+        boxText:boolean;
+        boxTextSize:Vector2D;
+        fillColor:RGBColor;
+        font:string;
+        fontSize:number;
+        justification:ParagraphJustification;
+        pointText:boolean;
+        resetCharStyle();
+        resetParagraphStyle();
+        strokeColor:RGBColor;
+        strokeOverFill:boolean;
+        strokeWidth:number;
+        text:number;
+        tracking:number;
+    }
 }

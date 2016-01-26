@@ -119,6 +119,11 @@ module AfterEffects {
 
     }
 
+    enum PulldownMethod {
+        PULLDOWN_3_2 = 5812,
+        ADVANCE_24P = 5813
+    }
+
     enum BitsPerChannel {
         B8 = 8,
         B16 = 16,
@@ -156,5 +161,15 @@ module AfterEffects {
         USER_STOPPED = 2817,
         ERR_STOPPED = 2818,
         DONE = 2819
+    }
+
+    enum ParagraphJustification {
+        LEFT_JUSTIFY = 7213,
+        RIGHT_JUSTIFY = 7214,
+        CENTER_JUSTIFY = 7215,
+        FULL_JUSTIFY_LASTLINE_LEFT = 7216,
+        FULL_JUSTIFY_LASTLINE_RIGHT = 7217,
+        FULL_JUSTIFY_LASTLINE_CENTER = 7218,
+        FULL_JUSTIFY_LASTLINE_FULL = 7219
     }
 }
