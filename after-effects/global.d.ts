@@ -4,7 +4,6 @@ module AfterEffects {
     declare var $:Helper;
     declare var aftereffects:AfterEffects;
     declare var aftereffects13:AfterEffects;
-    declare var AlphaMode:any;
     declare var app:Application;
     declare var contextMenu:any;
     declare var illustrator:any;

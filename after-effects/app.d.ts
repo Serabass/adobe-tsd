@@ -1,5 +1,14 @@
 module AfterEffects {
 
+    export interface Item extends Removable {
+        name:string;
+        comment:string;
+        id:number;
+        label:number;
+        parentFolder:FolderItem;
+        selected:boolean;
+        typeName:string;
+    }
 
     export interface Application {
         activeViewer:Viewer;
@@ -60,7 +69,6 @@ module AfterEffects {
         watchFolder();
     }
 
-
     export interface AfterEffects {
         AfterEffectsAppName:string;
         AfterEffectsTargetName:string;
@@ -92,7 +100,7 @@ module AfterEffects {
     }
 
     export interface Project {
-        activeItem:any;
+        activeItem:CompItem;
         bitsPerChannel:BitsPerChannel;
         displayStartFrame:number; // 0 or 1
         feetFramesFilmType:FeetFramesFilmType;
@@ -107,7 +115,7 @@ module AfterEffects {
         revision:number;
         rootFolder:FolderItem;
         selection:CompItem;
-        timeDisplayType:any;
+        timeDisplayType:TimeDisplayType;
         transparencyGridThumbnails:boolean;
         xmpPacket:string;
 
@@ -116,7 +124,7 @@ module AfterEffects {
         consolidateFootage():number;
         createComp():CompItem;
         importFile(importOptions:ImportOptions);
-        importFileWithDialog();
+        importFileWithDialog():Item[];
         importPlaceholder();
         item();
         itemByID();

@@ -172,4 +172,8 @@ module AfterEffects {
         FULL_JUSTIFY_LASTLINE_CENTER = 7218,
         FULL_JUSTIFY_LASTLINE_FULL = 7219
     }
+
+    enum TimeDisplayType {
+
+    }
 }

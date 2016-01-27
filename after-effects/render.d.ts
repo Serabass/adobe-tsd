@@ -7,10 +7,6 @@ module AfterEffects {
         saveAsTemplate(name:string);
     }
 
-    export interface OMCollection extends Array<OutputModule> {
-
-    }
-
     export interface RenderQueueItem extends Duplicable<RenderQueueItem>, Removable {
         numOutputModules:number;
         render:boolean;
@@ -28,10 +24,6 @@ module AfterEffects {
         outputModule(index:number):OutputModule;
         saveAsTemplate(name:string):void;
         applyTemplate(templateName:string);
-    }
-
-    export interface RQItemCollection {
-
     }
 
     export interface RenderQueue {

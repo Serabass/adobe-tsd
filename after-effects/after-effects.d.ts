@@ -4,21 +4,21 @@
 
 module AfterEffects {
 
-    export interface FootageItem {
+    export interface FootageItem extends Item {
 
     }
 
     export interface Shape {
         closed:boolean;
         vertices:Vector3D[];
-        inTangents:Vector3D[];
-        outTangents:Vector3D[];
-        featherSegLocs:any;
+        inTangents:Vector2D[];
+        outTangents:Vector2D[];
+        featherSegLocs:Float[];
         featherRelSegLocs:number[];
         featherRadii:any;
         featherInterps:any;
-        featherTensions:any;
-        featherTypes:any;
+        featherTensions:Float[];
+        featherTypes:Int[];
         featherRelCornerAngles:any;
 
     }
@@ -38,13 +38,11 @@ module AfterEffects {
         conformFrameRate;
         guessAlphaMode():void;
         guessPulldown(method:PulldownMethod):void;
-
     }
 
-    export interface CompItem extends Duplicable<CompItem>, Removable {
-        activeCamera:any;
+    export interface CompItem extends Item, Duplicable<CompItem> {
+        activeCamera:CameraLayer;
         bgColor:RGBColor;
-        comment:string;
         counters:boolean;
         displayStartTime:number;
         draft3d:boolean;
@@ -58,30 +56,25 @@ module AfterEffects {
         hasVideo:boolean;
         height:boolean;
         hideShyLayers:boolean;
-        id:number;
-        label:number;
         layers:LayerCollection;
         motionBlur:boolean;
         motionBlurAdaptiveSampleLimit:number;
         motionBlurSamplePerFrame:number;
         name:string;
         numLayers:number;
-        parentFolder:FolderItem;
         pixelAspect:number;
         preserveNestedFrameRate:boolean;
         preserveNestedResolution:boolean;
-        proxySource:any;
+        proxySource:FootageSource;
         renderer:string;
         renderers:string[];
         resolutionFactor:Vector2D;
-        selected:boolean;
         selectedLayers:TextLayer[];
         selectedProperties:Property[];
         shutterAngle:number;
         shutterPhase:number;
         time:number;
-        typeName:string;
-        usedIn:any;
+        usedIn:CompItem[];
         useProxy:boolean;
         width:number;
         workAreaDuration:number;

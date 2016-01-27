@@ -4,6 +4,8 @@ module AfterEffects {
     declare type RGBColor = number[];
     declare type Vector2D = number[];
     declare type Vector3D = number[];
+    declare type Float = number;
+    declare type Int = number;
 
     export interface Duplicable<T> {
         duplicate():T;
@@ -40,35 +42,27 @@ module AfterEffects {
 
     export interface Helper {
         appEncoding:string;
-
         build:string;
         buildDate:Date;
-
         decimalPoint:string;
         dictionary:any;
         engineName:string;
         error:Error;
-
         fileName:string;
         flags:number;
-
         global:any;
         hiresTime:number;
         includePath:string;
         level:number;
         line:number;
-
         locale:string;
         localize:boolean;
         memCache:number;
         os:string;
         screens:Screen[];
-
         stack:any;
         strict:boolean;
-
         version:string;
-
         _ext_AEFT:any;
         _ext_CORE:any;
 
@@ -87,10 +81,6 @@ module AfterEffects {
         summary();
         write(...objs:any[]);
         writeln(...objs:any[]);
-
-    }
-
-    export interface BridgeTalk {
 
     }
 
@@ -135,5 +125,16 @@ module AfterEffects {
         strokeWidth:number;
         text:number;
         tracking:number;
+    }
+
+    export interface MarkerValue {
+        constructor(name:string);
+        chapter:string;
+        comment:string;
+        cuePointName:string;
+        frameTarget:string;
+        duration:Float;
+        getParameters();
+        setParameters(obj:any):void;
     }
 }

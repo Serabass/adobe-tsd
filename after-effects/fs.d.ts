@@ -1,5 +1,11 @@
 module AfterEffects {
 
+    export interface FileSpource {
+        file:File;
+        missingFootagePath:string;
+        reload():void;
+    }
+
     export interface FolderItem extends Removable {
         comment:string;
         id:number;

@@ -2,7 +2,11 @@ module AfterEffects {
 
 
     export interface PropertyGroup {
-
+        numProperties:number;
+        addProperty(name:string):PropertyBase;
+        canAddProperty(name:string):boolean;
+        property(index:number);
+        property(name:string);
     }
 
     export interface PropertyBase extends Duplicable<Property>, Removable, CompItem<PropertyGroup>, Movable<number> {
