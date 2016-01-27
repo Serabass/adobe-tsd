@@ -24,7 +24,7 @@ module AfterEffects {
         hasTrackMatte:boolean;
         hasVideo:boolean;
         height:number;
-        index:number;
+        index:Int;
         inPoint:number;
         isEffect:boolean;
         isMask:boolean;
@@ -39,8 +39,8 @@ module AfterEffects {
         name:string;
         nullLayer:boolean;
         numProperties:number;
-        outPoint:number;
-        parent:any;
+        outPoint:Float;
+        parent:Layer;
         parentProperty:any;
         preserveTransparency:boolean;
         propertyDepth:number;
@@ -48,7 +48,7 @@ module AfterEffects {
         quality:any;
         samplingQuality:any;
         selected:boolean;
-        selectedProperties:any;
+        selectedProperties:(Property|PropertyGroup)[];
         shy:boolean;
         solo:boolean;
         source:FootageItem;
@@ -61,14 +61,14 @@ module AfterEffects {
         trackMatteType:TrackMatteType;
         width:number;
 
-        activeAtTime():boolean;
+        activeAtTime(time:Float):boolean;
         addProperty();
-        applyPreset();
-        audioActiveAtTime():boolean;
+        applyPreset(file:File):void;
+        audioActiveAtTime(time:Float):boolean;
         calculateTransformFromPoints();
         canAddProperty():boolean;
         compPointToSource();
-        copyToComp(intoComp:CompItem);
+        copyToComp(intoComp:CompItem):void;
         getRendererGUID();
         mask():PropertyGroup;
         moveAfter(layer:Layer):void;
@@ -79,7 +79,8 @@ module AfterEffects {
         property(prop:PropertyKey):Property;
         propertyGroup();
         replaceSource();
-        setParentWithJump();
+        setParentWithJump():void;
+        setParentWithJump(newParent:Layer):void;
         sourcePointToComp();
         sourcePointToComp(newParent:Layer);
         sourceRectAtTime();
