@@ -1,11 +1,49 @@
 module AfterEffects {
 
     enum BlendingMode {
-
+        ADD = 5020,
+        ALPHA_ADD = 5044,
+        CLASSIC_COLOR_BURN = 5019,
+        CLASSIC_COLOR_DODGE = 5025,
+        CLASSIC_DIFFERENCE = 5034,
+        COLOR = 5038,
+        COLOR_BURN = 5018,
+        COLOR_DODGE = 5024,
+        DANCING_DISSOLVE = 5014,
+        DARKEN = 5015,
+        DARKER_COLOR = 5047,
+        DIFFERENCE = 5033,
+        DISSOLVE = 5013,
+        EXCLUSION = 5035,
+        HARD_LIGHT = 5028,
+        HARD_MIX = 5032,
+        HUE = 5036,
+        LIGHTEN = 5021,
+        LIGHTER_COLOR = 5046,
+        LINEAR_BURN = 5017,
+        LINEAR_DODGE = 5023,
+        LINEAR_LIGHT = 5029,
+        LUMINESCENT_PREMUL = 5045,
+        LUMINOSITY = 5039,
+        MULTIPLY = 5016,
+        NORMAL = 5012,
+        OVERLAY = 5026,
+        PIN_LIGHT = 5031,
+        SATURATION = 5037,
+        SCREEN = 5022,
+        SILHOUETE_ALPHA = 5042,
+        SILHOUETTE_LUMA = 5043,
+        SOFT_LIGHT = 5027,
+        STENCIL_ALPHA = 5040,
+        STENCIL_LUMA = 5041,
+        SUBTRACT = 5048,
+        VIVID_LIGHT = 5030
     }
 
     enum KeyframeInterpolationType {
-
+        BEZIER = 6413,
+        HOLD = 6414,
+        LINEAR = 6412
     }
 
     enum FrameBlendingType {
@@ -175,5 +213,18 @@ module AfterEffects {
 
     enum TimeDisplayType {
 
+    }
+
+    enum Language {
+        CHINESE = 1619,
+        ENGLISH = 1612,
+        FRENCH = 1615,
+        GERMAN = 1614,
+        ITALIAN = 1616,
+        JAPANESE = 1613,
+        KOREAN = 1618,
+        PORTUGUESE = 1621,
+        RUSSIAN = 1620,
+        SPANISH = 1617
     }
 }
