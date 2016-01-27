@@ -70,7 +70,7 @@ module AfterEffects {
         renderers:string[];
         resolutionFactor:Vector2D;
         selectedLayers:TextLayer[];
-        selectedProperties:Property[];
+        selectedProperties:(Property|PropertyGroup)[];
         shutterAngle:number;
         shutterPhase:number;
         time:number;
