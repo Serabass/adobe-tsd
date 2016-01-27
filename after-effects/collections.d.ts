@@ -31,7 +31,7 @@ module AfterEffects {
         addSolid(color:RGBColor, name:string, width:number, height:number, pixelAspect:number):AVLayer;
         addText():TextLayer;
         addText(sourceText:string):TextLayer;
-        byName(name:string);
+        byName(name:string):Layer;
         precompose(layerIndices:number[], name:string, moveAllAttributes:boolean):CompItem;
         precompose(layerIndices:number[], name:string):CompItem;
     }
